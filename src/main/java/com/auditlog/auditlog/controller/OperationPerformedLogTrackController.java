@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -21,7 +20,6 @@ import java.util.List;
 @RequestMapping(path = "/operation", produces = MediaType.APPLICATION_JSON_VALUE)
 @Api(tags = "Operation Performed controller")
 @Slf4j
-@Controller
 @SuppressWarnings("PMD.CommentDefaultAccessModifier")
 public class OperationPerformedLogTrackController {
 
@@ -96,7 +94,6 @@ public class OperationPerformedLogTrackController {
     @ApiOperation(value = "Retrieve all operations performed on database.")
     @ApiResponses({
             @ApiResponse(code = 200, message = "OK", response = List.class),
-            @ApiResponse(code = 400, message = BAD_REQUEST, response = String.class),
             @ApiResponse(code = 500, message = INTERNAL_SERVER_ERROR, response = String.class)
     })
     public List<OperationPerformed> retrieveAllOperationsPerformed() {
